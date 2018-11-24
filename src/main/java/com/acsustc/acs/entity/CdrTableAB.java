@@ -19,18 +19,20 @@ public class CdrTableAB {
     private String callUuid;
     private String callerIdName;
     private String callerIdNumber;
-    private String destinationNumber;
+    private String calleeIdName;
+    private String calleeIdNumber;
     private String startStamp;
     private String answerStamp;
     private String endStamp;
     private String uduration;
     private String billsec;
     private String hangupCause;
-    public CdrTableAB(String callUuid, String callerIdName, String callerIdNumber, String destinationNumber) {
+    public CdrTableAB(String callUuid, String callerIdName, String callerIdNumber, String calleeIdName, String calleeIdNumber ) {
         this.callUuid = callUuid;
         this.callerIdName = callerIdName;
         this.callerIdNumber = callerIdNumber;
-        this.destinationNumber = destinationNumber;
+        this.calleeIdName = calleeIdName;
+        this.calleeIdNumber = calleeIdNumber;
     }
 
     public String getUuid() {
@@ -65,12 +67,20 @@ public class CdrTableAB {
         this.callerIdNumber = callerIdNumber;
     }
 
-    public String getDestinationNumber() {
-        return destinationNumber;
+    public String getCalleeIdName() {
+        return calleeIdName;
     }
 
-    public void setDestinationNumber(String destinationNumber) {
-        this.destinationNumber = destinationNumber;
+    public void setCalleeIdName(String calleeIdName) {
+        this.calleeIdName = calleeIdName;
+    }
+
+    public String getCalleeIdNumber() {
+        return calleeIdNumber;
+    }
+
+    public void setCalleeIdNumber(String calleeIdNumber) {
+        this.calleeIdNumber = calleeIdNumber;
     }
 
     public String getStartStamp() {

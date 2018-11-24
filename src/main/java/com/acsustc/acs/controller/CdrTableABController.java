@@ -41,7 +41,7 @@ public class CdrTableABController {
         return bean;
     }
 
-    @PostMapping("/cdr_table_ab/update{id}")
+    @PostMapping("/cdr_table_ab/update")
     public Object update(CdrTableAB bean, HttpServletRequest request) throws Exception {
         cdrTableABService.update(bean);
         return bean;

@@ -15,24 +15,23 @@ public class CdrTableB {
     @Id
     @GenericGenerator(name="idGenerator", strategy="uuid") //这个是hibernate的注解/生成32位UUID
     @GeneratedValue(generator="idGenerator")
-    String uuid;
+    private String uuid;
 
-    String callUuid;
-    String callerIdName;
-    String callerIdNumber;
-    String destinationNumber;
-    String startStamp;
-    String answerStamp;
-    String endStamp;
-    String uduration;
-    String billsec;
-    String hangupCause;
+    private String callUuid;
+    private String calleeIdName;
+    private String calleeIdNumber;
+//    private String destinationNumber;
+    private String startStamp;
+    private String answerStamp;
+    private String endStamp;
+    private String uduration;
+    private String billsec;
+    private String hangupCause;
 
-    public CdrTableB(String callUuid, String callerIdName, String callerIdNumber, String destinationNumber) {
+    public CdrTableB(String callUuid, String calleeIdName, String calleeIdNumber) {
         this.callUuid = callUuid;
-        this.callerIdName = callerIdName;
-        this.callerIdNumber = callerIdNumber;
-        this.destinationNumber = destinationNumber;
+        this.calleeIdName = calleeIdName;
+        this.calleeIdNumber = calleeIdNumber;
     }
 
     public CdrTableB() {
@@ -54,28 +53,20 @@ public class CdrTableB {
         this.callUuid = callUuid;
     }
 
-    public String getCallerIdName() {
-        return callerIdName;
+    public String getCalleeIdName() {
+        return calleeIdName;
     }
 
-    public void setCallerIdName(String callerIdName) {
-        this.callerIdName = callerIdName;
+    public void setCalleeIdName(String calleeIdName) {
+        this.calleeIdName = calleeIdName;
     }
 
-    public String getCallerIdNumber() {
-        return callerIdNumber;
+    public String getCalleeIdNumber() {
+        return calleeIdNumber;
     }
 
-    public void setCallerIdNumber(String callerIdNumber) {
-        this.callerIdNumber = callerIdNumber;
-    }
-
-    public String getDestinationNumber() {
-        return destinationNumber;
-    }
-
-    public void setDestinationNumber(String destinationNumber) {
-        this.destinationNumber = destinationNumber;
+    public void setCalleeIdNumber(String calleeIdNumber) {
+        this.calleeIdNumber = calleeIdNumber;
     }
 
     public String getStartStamp() {

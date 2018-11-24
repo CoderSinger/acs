@@ -16,24 +16,23 @@ public class CdrTableA {
     @Id
     @GenericGenerator(name="idGenerator", strategy="uuid") //这个是hibernate的注解/生成32位UUID
     @GeneratedValue(generator="idGenerator")
-    String uuid;
+    private String uuid;
 
-    String callUuid;
-    String callerIdName;
-    String callerIdNumber;
-    String destinationNumber;
-    String startStamp;
-    String answerStamp;
-    String endStamp;
-    String uduration;
-    String billsec;
-    String hangupCause;
+    private String callUuid;
+    private String callerIdName;
+    private String callerIdNumber;
+//    private String destinationNumber;
+    private String startStamp;
+    private String answerStamp;
+    private String endStamp;
+    private String uduration;
+    private String billsec;
+    private String hangupCause;
 
-    public CdrTableA(String callUuid, String callerIdName, String callerIdNumber, String destinationNumber) {
+    public CdrTableA(String callUuid, String callerIdName, String callerIdNumber) {
         this.callUuid = callUuid;
         this.callerIdName = callerIdName;
         this.callerIdNumber = callerIdNumber;
-        this.destinationNumber = destinationNumber;
     }
 
     public String getUuid() {
@@ -68,13 +67,7 @@ public class CdrTableA {
         this.callerIdNumber = callerIdNumber;
     }
 
-    public String getDestinationNumber() {
-        return destinationNumber;
-    }
 
-    public void setDestinationNumber(String destinationNumber) {
-        this.destinationNumber = destinationNumber;
-    }
 
     public String getStartStamp() {
         return startStamp;
