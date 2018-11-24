@@ -1,5 +1,7 @@
 package com.acsustc.acs.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /**
@@ -11,8 +13,8 @@ import javax.persistence.*;
 public class CdrTableAB {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "uuid")
+    @GenericGenerator(name="idGenerator", strategy="uuid") //这个是hibernate的注解/生成32位UUID
+    @GeneratedValue(generator="idGenerator")
     private String uuid;
     private String callUuid;
     private String callerIdName;
