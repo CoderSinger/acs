@@ -33,12 +33,12 @@ public class CdrTableAService {
         return cdrTableARepository.findAll(sort);
     }
 
-    public void delete(int id) {
-        cdrTableARepository.delete(id);
+    public void delete(String uuid) {
+        cdrTableARepository.delete(uuid);
     }
 
-    public CdrTableA select(int id) {
-        CdrTableA cdrTableA= cdrTableARepository.findOne(id);
+    public CdrTableA select(String uuid) {
+        CdrTableA cdrTableA= cdrTableARepository.findOne(uuid);
         return cdrTableA;
     }
     public void insert(CdrTableA bean) {

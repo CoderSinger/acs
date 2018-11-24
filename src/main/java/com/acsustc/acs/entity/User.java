@@ -1,15 +1,14 @@
 package com.acsustc.acs.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="user")
 public class User {
     @Id
-    @Column(name = "user_name")
+    @Column(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private  int userId;
     private String userName;
     private String password;
     private String phoneNumber;
@@ -18,6 +17,12 @@ public class User {
         this.password = password;
         this.userName = userName;
         this.phoneNumber = phoneNumber;
+    }
+
+
+    public User(String userName, String password) {
+        this.password = password;
+        this.userName = userName;
     }
 
     public User() {

@@ -1,0 +1,16 @@
+<!--index.html-->
+<!--模板源码应该很好理解，不理解的话去看看教程就OK-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>首页</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<h1> <span th:text="${result}"></span></h1>
+<h1>欢迎 ： <span  th:text="${session.user}?${session.user.getUserName()}:'（您未登录）'" ></span> </h1>
+<a th:href="@{/register}">点击注册</a>
+<a th:href="@{/login}" th:if="${session.user==null}">点击登录</a>
+<a th:href="@{/loginOut}" th:unless="${session.user==null}">退出登录</a>
+</body>
+</html>

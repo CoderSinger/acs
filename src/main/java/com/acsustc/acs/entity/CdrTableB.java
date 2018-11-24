@@ -1,18 +1,17 @@
 package com.acsustc.acs.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 /**
- * CdrTableA实体类
+ * CdrTableB实体类
  * @Author 陈桢秀
  * 2018-11-23 23:09:32
  */
 @Entity
-@Table(name="cdr_table_a")
-public class CdrTableA {
+@Table(name="cdr_table_b")
+public class CdrTableB {
     @Id
     @GenericGenerator(name="idGenerator", strategy="uuid") //这个是hibernate的注解/生成32位UUID
     @GeneratedValue(generator="idGenerator")
@@ -29,11 +28,14 @@ public class CdrTableA {
     String billsec;
     String hangupCause;
 
-    public CdrTableA(String callUuid, String callerIdName, String callerIdNumber, String destinationNumber) {
+    public CdrTableB(String callUuid, String callerIdName, String callerIdNumber, String destinationNumber) {
         this.callUuid = callUuid;
         this.callerIdName = callerIdName;
         this.callerIdNumber = callerIdNumber;
         this.destinationNumber = destinationNumber;
+    }
+
+    public CdrTableB() {
     }
 
     public String getUuid() {

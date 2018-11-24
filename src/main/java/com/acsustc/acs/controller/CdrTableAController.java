@@ -52,19 +52,19 @@ public class CdrTableAController {
         return bean;
     }
 
-    @DeleteMapping("/cdr_table_a/delete{id}")
-    public String delete(@PathVariable("id") int id, HttpServletRequest request)  throws Exception {
-        cdrTableAService.delete(id);
+    @DeleteMapping("/cdr_table_a/delete{uuid}")
+    public String delete(@PathVariable("uuid") String uuid, HttpServletRequest request)  throws Exception {
+        cdrTableAService.delete(uuid);
         return null;
     }
 
-    @GetMapping("/cdr_table_a/select{id}")
-    public CdrTableA get(@PathVariable("id") int id) throws Exception {
-        CdrTableA bean=cdrTableAService.select(id);
+    @GetMapping("/cdr_table_a/select{uuid}")
+    public CdrTableA get(@PathVariable("uuid") String uuid) throws Exception {
+        CdrTableA bean=cdrTableAService.select(uuid);
         return bean;
     }
 
-    @PostMapping("/cdr_table_a/update{id}")
+    @PostMapping("/cdr_table_a/update")
     public Object update(CdrTableA bean, HttpServletRequest request) throws Exception {
         cdrTableAService.update(bean);
         return bean;

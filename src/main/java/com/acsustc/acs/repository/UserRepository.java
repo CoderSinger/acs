@@ -9,10 +9,7 @@ import org.springframework.data.jpa.repository.Query;
  * @Author 陈桢秀
  * 2018-11-23 23:12:08
  */
-public interface UserRepository extends JpaRepository<User,Integer> {
-
-    public User findByUserNameAndPassword(String userName, String password);
-
+public interface UserRepository extends JpaRepository<User,String> {
     public User findByUserName(String userName);
 }
 

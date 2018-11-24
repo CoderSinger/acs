@@ -1,0 +1,22 @@
+<!--login.html-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>登录</title>
+</head>
+<body>
+<h1>欢迎登录</h1>
+<!--这个地方user也会报错，不用担心-->
+<!--注意下面name，和id都写上就OK-->
+<form th:action="@{/login}" th:object="${user}" method="post">
+    <label for="username">username:</label>
+    <input type="text" name="userName" id="username" />
+    <!--input中的name是生成object的元素！！！！！！！！！！-->
+    <label for="password">password:</label>
+    <input type="text" name="password" id="password" />
+    <input type="submit" value="submit"/>
+</form>
+</body>
+</html>
